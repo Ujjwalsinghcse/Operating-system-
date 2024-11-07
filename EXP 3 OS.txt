@@ -1,0 +1,60 @@
+1.
+#!/bin/bash
+
+echo "Enter the number of terms for the Fibonacci series:"
+read n
+
+
+a=0
+b=1
+
+echo "Fibonacci series up to $n terms:"
+for (( i=0; i<n; i++ ))
+do
+    echo -n "$a "
+    # Calculate the next term
+    next=$((a + b))
+    a=$b
+    b=$next
+done
+echo
+
+2.
+#!/bin/bash
+
+echo "Enter three numbers:"
+read a
+read b
+read c
+
+if [ $a -ge $b ] && [ $a -ge $c ]
+then
+    largest=$a
+elif [ $b -ge $a ] && [ $b -ge $c ]
+then
+    largest=$b
+else
+    largest=$c
+fi
+
+echo "The largest number is $largest"
+
+3.
+#!/bin/bash
+
+echo "Enter the count of numbers:"
+read n
+
+sum=0
+
+echo "Enter the numbers:"
+for (( i=0; i<n; i++ ))
+do
+    read num
+    sum=$((sum + num))
+done
+
+average=$(echo "$sum / $n" | bc -l)
+
+echo "The average is $average"
+

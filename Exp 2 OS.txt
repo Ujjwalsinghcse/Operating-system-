@@ -1,0 +1,41 @@
+1. 
+#!/bin/bash
+
+echo "Hello, World!"
+
+2.
+#!/bin/bash
+
+echo "Enter a number to find its factorial:"
+read num
+
+factorial=1
+i=$num
+
+# Calculate factorial
+while [ $i -gt 1 ]
+do
+    factorial=$((factorial * i))
+    i=$((i - 1))
+done
+
+echo "Factorial of $num is $factorial"
+
+3.
+
+#!/bin/bash
+
+echo "Enter Basic Salary:"
+read basic_salary
+echo "Enter HRA percentage (e.g., 20 for 20%):"
+read hra_percent
+echo "Enter DA percentage (e.g., 10 for 10%):"
+read da_percent
+
+hra=$((basic_salary * hra_percent / 100))
+da=$((basic_salary * da_percent / 100))
+
+gross_salary=$((basic_salary + hra + da))
+
+echo "Gross Salary is $gross_salary"
+
